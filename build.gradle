@@ -1,0 +1,51 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.1'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.bs'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '21'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	//web支持
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+
+
+//打包配置
+bootJar {
+
+	manifestContentCharset 'utf-8'
+
+	metadataCharset 'utf-8'
+
+	archivesBaseName = 'SpringJdk21' // jar包名
+
+	manifest {
+		attributes "Manifest-Version": 1.0,
+				'Start-Class': 'com.bs.SpringJDK21.SpringJdk21Application' //  springboot项目的启动类
+
+	}
+
+}
+
+jar.enabled = true
+
+bootJar.enabled = true
+
+
