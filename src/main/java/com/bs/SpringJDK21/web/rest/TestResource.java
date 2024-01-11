@@ -18,7 +18,7 @@ public class TestResource {
 
     @GetMapping("/testL")
     public String testL(){
-        System.out.println("我接到请求了LLL！");
+        System.out.println("我接到请求了LLL,TSNTSS！");
         return "8080：testL知道了";
     }
 
